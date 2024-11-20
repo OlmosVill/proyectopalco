@@ -56,6 +56,7 @@ const Login = () => {
             required
           />
         </div>
+        
 
         <div>
           <label htmlFor="password" className="block text-sm font-medium">Contraseña</label>
