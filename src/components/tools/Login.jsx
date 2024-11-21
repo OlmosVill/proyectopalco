@@ -40,46 +40,53 @@ const Login = () => {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
+    <div className="flex p-6 mx-auto">
+      
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="username" className="block text-sm font-medium">Nombre de Usuario</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border border-gray-300 rounded"
-            required
-          />
-        </div>
-
-        
-
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border border-gray-300 rounded"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className={`w-full py-2 mt-4 bg-blue-500 text-white font-bold rounded ${loading ? 'opacity-50' : ''}`}
-          disabled={loading}
-        >
-          {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}
-        </button>
-      </form>
+      {
+        !isLoggedIn &&(
+          
+          <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+          <h2 className="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
+            <label htmlFor="username" className="block text-sm font-medium">Nombre de Usuario</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+              required
+            />
+          </div>
+  
+          
+  
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="mt-1 p-2 w-full border border-gray-300 rounded"
+              required
+            />
+          </div>
+  
+          <button
+            type="submit"
+            className={`w-full py-2 mt-4 bg-blue-500 text-white font-bold rounded ${loading ? 'opacity-50' : ''}`}
+            disabled={loading}
+          >
+            {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}
+          </button>
+        </form>
+        )
+      }
+    
 
       {/* Mostrar los botones solo si el login es exitoso */}
       {isLoggedIn && (

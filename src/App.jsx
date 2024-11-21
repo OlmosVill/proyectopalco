@@ -11,7 +11,7 @@ const App = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-2">
       {/* Botones para cambiar entre vistas */}
       <div className="mb-6">
         <Login/>

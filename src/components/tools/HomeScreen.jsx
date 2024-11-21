@@ -26,7 +26,7 @@ const HomeScreen = () => {
   }
 
   return (
-    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <h1 className="col-span-full text-3xl font-bold text-center mb-6">Previos</h1>
       {previos.map((item) => (
         <div key={item.guiaHouse} className="bg-white p-6 rounded-lg shadow-lg">
