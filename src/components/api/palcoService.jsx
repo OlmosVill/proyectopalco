@@ -3,7 +3,7 @@ import apiClient from './axios';
 // Obtener una lista de registros
 export const getPrevios = async () => {
   try {
-    const response = await apiClient.get('/');
+    const response = await apiClient.get('/GetPrevios');
     return response.data;
   } catch (error) {
     console.error('Error obteniendo datos:', error);
@@ -14,7 +14,7 @@ export const getPrevios = async () => {
 // Crear un nuevo registro
 export const createPrevio = async (nuevoPrevio) => {
   try {
-    const response = await apiClient.post('/', nuevoPrevio);
+    const response = await apiClient.post('/Palco', nuevoPrevio);
     return response.data;
   } catch (error) {
     console.error('Error creando registro:', error);

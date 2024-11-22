@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Crear una instancia de Axios
 const apiClient = axios.create({
-  baseURL: 'https://localhost:7273/api/Palco', // Cambia esto si necesitas otra ruta base
+  baseURL: 'https://palcoapi20241121001055.azurewebsites.net', // Cambia esto si necesitas otra ruta base
   headers: {
     'Content-Type': 'application/json',
   },

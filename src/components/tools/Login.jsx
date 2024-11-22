@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { login } from '../api/userService';
 import ObtenerComponent from './HomeScreen'; // Componente para obtener la lista
 import CrearComponent from './CreatePrevio'; // Componente para crear un nuevo registro
+import Logo from '../../LogoPalco.png'
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -91,18 +92,26 @@ const Login = () => {
       {/* Mostrar los botones solo si el login es exitoso */}
       {isLoggedIn && (
         <div className="mt-6">
+             <div className="mt-4">
+    <img 
+      src={Logo} 
+      alt="Descripción de la imagen"
+      className="mx-auto mt-4 w-45 h-45 p-4" 
+    />
+  </div>
+
           <button
             onClick={() => setShowCreate(!showCreate)}
             className="w-full py-2 mb-4 bg-green-500 text-white font-bold rounded"
           >
-            {showCreate ? 'Ocultar Crear' : 'Crear Nuevo'}
+            {showCreate ? 'Ocultar' : 'Mostrar crear nuevo previo'}
           </button>
 
           <button
             onClick={() => setShowGet(!showGet)}
             className="w-full py-2 bg-blue-500 text-white font-bold rounded"
           >
-            {showGet ? 'Ocultar Obtener' : 'Obtener Registros'}
+            {showGet ? 'Ocultar Obtener' : 'Ver registros'}
           </button>
         </div>
       )}
